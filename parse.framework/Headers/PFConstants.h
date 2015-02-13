@@ -2,15 +2,22 @@
 // Copyright 2011 Parse, Inc. All rights reserved.
 
 #import <Foundation/Foundation.h>
+
 @class PFObject;
 @class PFUser;
 
-// Version
-#define PARSE_VERSION @"1.2.9"
+///--------------------------------------
+/// @name Version
+///--------------------------------------
+
+#define PARSE_VERSION @"1.6.2"
 
 extern NSInteger const PARSE_API_VERSION;
 
-// Platform
+///--------------------------------------
+/// @name Platform
+///--------------------------------------
+
 #define PARSE_IOS_ONLY (TARGET_OS_IPHONE)
 #define PARSE_OSX_ONLY (TARGET_OS_MAC && !(TARGET_OS_IPHONE))
 
@@ -25,10 +32,16 @@ extern NSString *const kPFDeviceType;
 @compatibility_alias UIView NSView;
 #endif
 
-// Server
+///--------------------------------------
+/// @name Server
+///--------------------------------------
+
 extern NSString *const kPFParseServer;
 
-// Cache policies
+///--------------------------------------
+/// @name Cache Policies
+///--------------------------------------
+
 typedef enum {
     kPFCachePolicyIgnoreCache = 0,
     kPFCachePolicyCacheOnly,
@@ -38,7 +51,53 @@ typedef enum {
     kPFCachePolicyCacheThenNetwork
 } PFCachePolicy;
 
-// Errors
+///--------------------------------------
+/// @name Logging Levels
+///--------------------------------------
+
+/*!
+ `PFLogLevel` enum specifies different levels of logging that could be used to limit or display more messages in logs.
+
+ @see [Parse setLogLevel:]
+ @see [Parse logLevel]
+ */
+typedef NS_ENUM(uint8_t, PFLogLevel) {
+    /*!
+     Log level that disables all logging.
+     */
+    PFLogLevelNone = 0,
+    /*!
+     Log level that if set is going to output error messages to the log.
+     */
+    PFLogLevelError = 1,
+    /*!
+     Log level that if set is going to output the following messages to log:
+     - Errors
+     - Warnings
+     */
+    PFLogLevelWarning = 2,
+    /*!
+     Log level that if set is going to output the following messages to log:
+     - Errors
+     - Warnings
+     - Informational messages
+     */
+    PFLogLevelInfo = 3,
+    /*!
+     Log level that if set is going to output the following messages to log:
+     - Errors
+     - Warnings
+     - Informational messages
+     - Debug messages
+     */
+    PFLogLevelDebug = 4
+};
+
+///--------------------------------------
+/// @name Errors
+///--------------------------------------
+
+extern NSString *const PFParseErrorDomain;
 
 /*! @abstract 1: Internal server error. No information available. */
 extern NSInteger const kPFErrorInternalServer;
@@ -115,7 +174,10 @@ extern NSInteger const kPFErrorInvalidImageData;
 extern NSInteger const kPFErrorUnsavedFile;
 /*! @abstract 153: Fail to delete file. */
 extern NSInteger const kPFErrorFileDeleteFailure;
-
+/*! @abstract 155: Application has exceeded its request limit. */
+extern NSInteger const kPFErrorRequestLimitExceeded;
+/*! @abstract 160: Invalid event name. */
+extern NSInteger const kPFErrorInvalidEventName;
 /*! @abstract 200: Username is missing or empty */
 extern NSInteger const kPFErrorUsernameMissing;
 /*! @abstract 201: Password is missing or empty */
@@ -147,6 +209,10 @@ extern NSInteger const kPFErrorFacebookInvalidSession;
 /*! @abstract 251: Invalid linked session */
 extern NSInteger const kPFErrorInvalidLinkedSession;
 
+///--------------------------------------
+/// @name Blocks
+///--------------------------------------
+
 typedef void (^PFBooleanResultBlock)(BOOL succeeded, NSError *error);
 typedef void (^PFIntegerResultBlock)(int number, NSError *error);
 typedef void (^PFArrayResultBlock)(NSArray *objects, NSError *error);
@@ -158,3 +224,19 @@ typedef void (^PFDataStreamResultBlock)(NSInputStream *stream, NSError *error);
 typedef void (^PFStringResultBlock)(NSString *string, NSError *error);
 typedef void (^PFIdResultBlock)(id object, NSError *error);
 typedef void (^PFProgressBlock)(int percentDone);
+
+///--------------------------------------
+/// @name Deprecated Macros
+///--------------------------------------
+
+#ifndef PARSE_DEPRECATED
+#ifdef __deprecated_msg
+#define PARSE_DEPRECATED(_MSG) __deprecated_msg(_MSG)
+#else
+#ifdef __deprecated
+#define PARSE_DEPRECATED(_MSG) __attribute__((deprecated))
+#else
+#define PARSE_DEPRECATED(_MSG)
+#endif
+#endif
+#endif
