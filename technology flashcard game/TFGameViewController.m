@@ -246,8 +246,8 @@
 									 }
 			
 									 completion:^(BOOL finished) {
-										 
-										 _currentFlashCardView.center = CGPointMake(self.cardOnScreenFrame.size.width + self.view.bounds.size.width, self.currentFlashCardView.center.y);
+										 // Tarry Cutler commented this out to keep image from migrating up
+										 //_currentFlashCardView.center = CGPointMake(self.cardOnScreenFrame.size.width + self.view.bounds.size.width, self.currentFlashCardView.center.y);
 										 //move the flashcard offscreen right
 										 
 										 self.currentFlashCardView.imageFaceUp = YES;
@@ -260,7 +260,8 @@
 										 
 										 [UIView animateWithDuration:SPEED_OF_FLASHCARD_CHANGE
 																			animations:^(void){
-																				self.currentFlashCardView.frame = self.cardOnScreenFrame;
+																				// Tarry Cutler commented this out to keep image from migrating up
+                                                                                // self.currentFlashCardView.frame = self.cardOnScreenFrame;
 																			}];
 										 //animate it back on
 										 

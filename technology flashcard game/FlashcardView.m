@@ -53,7 +53,7 @@
 - (void)drawRect:(CGRect)rect
 {
 	
-	UIBezierPath * roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:15.0f];
+    UIBezierPath * roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:15.0f];
 	[roundedRect addClip];
 	if (self.isCorrect)
 		[[UIColor colorWithRed:40.0f / 255.0f
@@ -71,7 +71,7 @@
 	UIRectFill(self.bounds);
 	
 	if (self.imageFaceUp == YES)
-		[self drawImageSide];
+        [self drawImageSide];
 
 }
 
@@ -85,7 +85,7 @@
 
 -(void)drawImageSide
 {
-	[[UIImage imageNamed:self.currentFlashcard.flashcardImageName] drawInRect:self.bounds];
+    [[UIImage imageNamed:self.currentFlashcard.flashcardImageName] drawInRect:self.bounds];
 }
 
 -(void)setIsCorrect:(BOOL)isCorrect
