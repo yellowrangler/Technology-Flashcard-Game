@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D0D0286E-23E7-4D34-9AF9-4FA6FBEEB6AA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>technology flashcard game</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>392A5EC53A9B1530E4EFC226B6B1A6CA1EE36140</key>
 		<string>https://github.com/yellowrangler/Technology-Flashcard-Game.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>technology flashcard game.xcodeproj</string>
+	<string>technology flashcard game.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>392A5EC53A9B1530E4EFC226B6B1A6CA1EE36140</key>

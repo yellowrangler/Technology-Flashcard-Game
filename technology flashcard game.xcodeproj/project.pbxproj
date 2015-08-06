@@ -1019,6 +1019,11 @@
 				CLASSPREFIX = TechnologyFlashcard;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = EiE;
+				TargetAttributes = {
+					2C43A4CF16D57EE100143C76 = {
+						DevelopmentTeam = Z2AY865X4R;
+					};
+				};
 			};
 			buildConfigurationList = 2C43A4CB16D57EE100143C76 /* Build configuration list for PBXProject "technology flashcard game" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1380,6 +1385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1389,6 +1395,8 @@
 		2C43A4F416D57EE200143C76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Technology Flashcard Game\"",
@@ -1398,6 +1406,7 @@
 				GCC_PREFIX_HEADER = "Technology Flashcard Game/Technology Flashcard Game-Prefix.pch";
 				INFOPLIST_FILE = "Technology Flashcard Game/Technology Flashcard Game-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "64f899ab-67d6-4a03-bfc7-c66a8167ff5f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1405,6 +1414,8 @@
 		2C43A4F516D57EE200143C76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Technology Flashcard Game\"",
@@ -1414,6 +1425,7 @@
 				GCC_PREFIX_HEADER = "Technology Flashcard Game/Technology Flashcard Game-Prefix.pch";
 				INFOPLIST_FILE = "Technology Flashcard Game/Technology Flashcard Game-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "64f899ab-67d6-4a03-bfc7-c66a8167ff5f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

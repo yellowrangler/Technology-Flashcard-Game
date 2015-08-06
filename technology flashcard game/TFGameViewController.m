@@ -233,6 +233,15 @@
 	self.currentFlashCardView.currentFlashcard = self.technologyDeck[++self.indexOfCurrentCard];
 	//increment and update the image on the card
 	
+    // Tarry Cutler added these lines to change animation card display - start
+    self.currentFlashCardView.imageFaceUp = YES;
+    self.correctImageView.hidden = YES;
+    self.correctLabel.hidden = YES;
+    
+    self.yesTechnologyButton.hidden = NO;
+    self.noTechnologyButton.hidden = NO;
+    // Tarry Cutler added these lines end
+    
 	self.nextButton.hidden = YES;
 	self.descriptionLabel.hidden = YES;
 	self.isThisTechnologyLabel.hidden = NO;
